@@ -1,0 +1,585 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+header {
+    background: #d6f0f0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #4caf50;
+}
+header img {
+    height: 80px;
+}
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #007BFF;
+}
+header h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #555;
+}
+nav {
+    background-color: #4caf50;
+    overflow: hidden;
+}
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    background-color: #45a049;
+}
+/* Mengatur Layout utama */
+.container {
+    display: flex;
+    flex-direction: column; /* Menyusun secara vertikal */
+    gap: 20px; /* Memberikan jarak antar elemen */
+    padding: 20px;
+}
+.main {
+    flex: 3;
+    margin-right: 20px;
+}
+/* Sidebar untuk Kepala Desa */
+.sidebar {
+    width: 300px; /* Lebar sidebar */
+    background-color: #f4f4f4;  /* Warna latar belakang untuk sidebar */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+    position: relative; /* Agar tetap berada di bawah */
+    align-self: flex-end; /* Menempatkan sidebar di sebelah kanan */
+}
+.agenda {
+    background: #eef;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.news img {
+    width: 100%;
+    height: auto;
+}
+.news h3 {
+    color: #007BFF;
+    margin-top: 10px;
+}
+footer {
+    background: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    margin-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.admin-panel {
+    padding: 20px;
+    background: #f9f9f9;
+}
+
+.admin-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #007BFF;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    background: #007BFF;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+body.admin {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f9f9f9;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.tab {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tab.active {
+    background-color: #444;
+    color: white;
+}
+
+.toolbar {
+    margin-bottom: 15px;
+}
+
+.add-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.edit-btn {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            margin-left: 15px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+/* Galeri */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+.struktur-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.struktur-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.struktur-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.struktur-card h3 {
+    margin: 10px 0 5px;
+}
+
+.struktur-card p {
+    margin: 0;
+}
+.berita-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.berita-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.berita-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.berita-card .konten {
+    padding: 15px;
+}
+
+.berita-card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.berita-card p {
+    font-size: 14px;
+    color: #444;
+}
+
+.tanggal {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* Popup */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid #fff;
+    border-radius: 10px;
+}
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* gelap transparan */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.overlay img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.overlay h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.overlay button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.overlay button:hover {
+    background-color: #ddd;
+}
+.contact-container1 {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container1 h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.contact-info1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.contact-info1 div {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.contact-info1 div h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-info1 div p {
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-info div {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+/* Container utama untuk slideshow dan sidebar */
+.container{
+    display: flex;
+    flex-wrap: wrap;  /* Agar elemen bisa berbaris */
+    justify-content: space-between;  /* Memberikan jarak antar elemen */
+    margin-top: 20px; /* Mengurangi jarak antara header dan konten */
+}
+
+/* Style untuk slideshow */
+.banner-container {
+    width: 100%; /* Ukuran slideshow */
+    height: 400px; /* Sesuaikan dengan tinggi yang diinginkan */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Style untuk gambar dalam slideshow */
+.banner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.banner img.active {
+    opacity: 1;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 20%; /* Lebar sidebar */
+    padding: 20px;
+    box-sizing: border-box;  /* Agar padding tidak menambah ukuran */
+    align-items: flex-start; /* Menyelaraskan elemen ke atas */
+}
+/* news */
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .news-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .news-card:hover {
+      transform: scale(1.02);
+    }
+    .news-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .news-content {
+      padding: 15px;
+    }
+    .news-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .news-date {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .news-summary {
+      font-size: 14px;
+      color: #444;
+    }

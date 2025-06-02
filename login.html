@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Desa Adat Telaga Tunjung</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // Mencegah form untuk mengirimkan data
+
+            // Ambil nilai dari form
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Validasi username dan password
+            if (username === "telagatunjung" && password === "telagatunjungbersatu1") {
+                // Jika login berhasil, arahkan ke halaman dashboard
+                window.location.href = "dashboard.php";
+            } else {
+                // Jika login gagal, tampilkan pesan error
+                alert("Username atau Password salah!");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <img src="ppicture\logo_desa_adat_ttk-removebg-preview.png" alt="Logo">
+    <div>
+        <h1>LOGIN ADMIN</h1>
+        <h2>Masukkan Username dan Password</h2>
+    </div>
+</header>
+
+<main>
+    <form onsubmit="validateLogin(event)">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</main>
+
+<footer>
+    &copy; 2025 Desa Adat Telaga Tunjung - Login Admin
+</footer>
+
+</body>
+</html>

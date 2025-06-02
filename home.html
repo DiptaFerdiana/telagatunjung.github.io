@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Desa Adat Telaga Tunjung</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="picture/logo_desa_adat_ttk-removebg-preview.png" alt="Logo">
+    <div>
+        <h1>DESA ADAT TELAGA TUNJUNG</h1>
+        <h2>DESA TIMPAG, KECAMATAN KERAMBITAN, KABUPATEN TABANAN, BALI</h2>
+    </div>
+    <img src="picture/logo_desa_adat_ttk-removebg-preview.png" alt="Kantor Desa" style="height: 80px;">
+</header>
+
+<nav>
+    <a href="home.html">Beranda</a>
+    <a href="struktur.php">Struktur Kepengurusan</a>
+    <a href="berita.php">Berita</a>
+    <a href="gallery.php">Galeri Foto</a>
+    <a href="peta.html">Pemetaan Wilayah</a>
+    <a href="hubungi.html">Hubungi Kami</a>
+    <a href="login.html">Admin</a> <!-- Tambahan menu admin -->
+</nav>
+
+<!-- Main Content Container -->
+<div class="container11">
+    <!-- Slideshow Section -->
+    <section class="banner-container">
+        <div class="banner">
+            <img src="picture/FiveM_b2944_GTAProcess_2025-03-14_01-43-30.png" class="slide">
+            <img src="picture/logo desa adat ttk.jpg" class="slide">
+            <img src="picture/Screenshot 2025-04-24 231520.png" class="slide">
+            <img src="picture/Screenshot 2025-05-04 111502.png" class="slide">
+        </div>
+    </section>
+  <h1>Telaga Tunjung</h1>
+
+  <div class="news-container">
+    <div class="news-card">
+      <div class="news-content">
+        <div class="news-title">Judul Berita Pertama</div>
+        <div class="news-date">1 Juni 2025</div>
+        <div class="news-summary">
+          Ini adalah ringkasan berita pertama. Konten ini menjelaskan informasi singkat mengenai berita tersebut.
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-content">
+        <div class="news-title">Judul Berita Kedua</div>
+        <div class="news-date">31 Mei 2025</div>
+        <div class="news-summary">
+          Ini adalah ringkasan berita kedua. Penjelasan singkat isi berita dimuat di sini untuk menarik pembaca.
+        </div>
+      </div>
+    </div>
+<footer>
+    &copy; 2025 Desa Adat Telaga Tunjung - Dipta Ferdiana
+</footer>
+
+<!-- Slideshow Script -->
+<script>
+let index = 0;
+function showSlides() {
+    let slides = document.querySelectorAll(".banner img");
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+    index = (index + 1) % slides.length; // Loop kembali ke awal setelah gambar terakhir
+}
+setInterval(showSlides, 3000);
+showSlides(); // Jalankan fungsi showSlides pertama kali
+</script>
+
+</body>
+</html>

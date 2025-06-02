@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cb0b43b72be17b516bd240099f0b96a4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    top: 10px; right: 10px;
+    width: 280px;
+    background-color: #ffffffcc;
+    border: 2px solid #dcdcdc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index:9999;
+    font-size:14px;
+    font-family: Arial, sans-serif;
+    padding: 15px;">
+    <h4 style="margin: 0; font-weight: bold; color: #007BFF; text-align: center; font-size: 16px;">Legenda Peta</h4>
+    <hr style="border-top: 1px solid #dcdcdc; margin: 8px 0;">
+
+    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+        <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png" 
+            style="width: 20px; height: 30px; margin-right: 10px;">
+        <span><strong> Pura</strong></span>
+    </div>
+
+    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+        <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png" 
+            style="width: 20px; height: 30px; margin-right: 10px;">
+        <span><strong> Balai Banjar & Sekretariat</strong></span>
+    </div>
+</div>
+    
+            <div class="folium-map" id="map_cb0b43b72be17b516bd240099f0b96a4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cb0b43b72be17b516bd240099f0b96a4 = L.map(
+                "map_cb0b43b72be17b516bd240099f0b96a4",
+                {
+                    center: [-8.5, 115.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f83c6921fc014af2945ab30cc2cb7a04 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f83c6921fc014af2945ab30cc2cb7a04.addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var tile_layer_f5b7d70d5c56affe039081e1d9b2f3e3 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "CartoDB",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f5b7d70d5c56affe039081e1d9b2f3e3.addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var tile_layer_2429597b5ab3b6979266bc90fcf112e7 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "CartoDB",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2429597b5ab3b6979266bc90fcf112e7.addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var tile_layer_1f5fc61296f8353cd3b5134eea45fae7 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1f5fc61296f8353cd3b5134eea45fae7.addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var marker_bb3fda078f444be7de702f148d873de3 = L.marker(
+                [-8.4748866, 115.0947442],
+                {
+}
+            ).addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var icon_dd681c07e2a3b19522b40aa0299c23c3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ed6e967f4cd1d799f07be5bf374d571 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab799fb7f09b6a922c419aaf16c8c446 = $(`<div id="html_ab799fb7f09b6a922c419aaf16c8c446" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; line-height: 1.4; padding: 10px; width: 350px; background: #ffffff;                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; text-align: center;">         <img src="https://th.bing.com/th/id/OIP.o15P0ev9BFKViKd06hNiRgHaHO?rs=1&pid=ImgDetMain" alt="Logo Pura" style="width: 80px; height: auto; margin-bottom: 10px;">         <h3 style="color: #007BFF; font-size: 18px; margin-bottom: 8px; text-transform: uppercase;">             Pura Dalem Desa Adat Telaga Tunjung         </h3>         <table style="width: 100%; border-collapse: collapse; font-size: 14px; background: #f9f9f9; border-radius: 6px;">             <tr style="background: #007BFF; color: white;">                 <th style="text-align: left; padding: 6px; width: 40%;">Detail</th>                 <th style="text-align: left; padding: 6px;">Informasi</th>             </tr>             <tr>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff;">Petoyan</td>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff; font-weight: 600;">                     Buda Umanis Tambir                 </td>             </tr>         </table>         <div style="text-align: center; margin-top: 10px;">             <a href='https://maps.google.com/?q=-8.4748866,115.0947442' target="_blank"              style="display: inline-block; padding: 8px 12px; background: #007BFF; color: white;              border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">                 📍 Google Maps             </a>         </div>     </div>     </div>`)[0];
+                popup_0ed6e967f4cd1d799f07be5bf374d571.setContent(html_ab799fb7f09b6a922c419aaf16c8c446);
+            
+        
+
+        marker_bb3fda078f444be7de702f148d873de3.bindPopup(popup_0ed6e967f4cd1d799f07be5bf374d571)
+        ;
+
+        
+    
+    
+                marker_bb3fda078f444be7de702f148d873de3.setIcon(icon_dd681c07e2a3b19522b40aa0299c23c3);
+            
+    
+            var marker_bf201ac2373da3d1030748f9ad6af873 = L.marker(
+                [-8.4611061, 115.0942181],
+                {
+}
+            ).addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var icon_9e90d1e0e5913f94ab0392c30096d467 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e07702d8883fb296ec4613e5ce2d8528 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_de9d9eaf30cdf5fac167a78d21eeacff = $(`<div id="html_de9d9eaf30cdf5fac167a78d21eeacff" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; line-height: 1.4; padding: 10px; width: 350px; background: #ffffff;                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; text-align: center;">         <img src="https://th.bing.com/th/id/OIP.o15P0ev9BFKViKd06hNiRgHaHO?rs=1&pid=ImgDetMain" alt="Logo Pura" style="width: 80px; height: auto; margin-bottom: 10px;">         <h3 style="color: #007BFF; font-size: 18px; margin-bottom: 8px; text-transform: uppercase;">             Pura Puseh lan Bale Agung Desa Adat Telaga Tunjung         </h3>         <table style="width: 100%; border-collapse: collapse; font-size: 14px; background: #f9f9f9; border-radius: 6px;">             <tr style="background: #007BFF; color: white;">                 <th style="text-align: left; padding: 6px; width: 40%;">Detail</th>                 <th style="text-align: left; padding: 6px;">Informasi</th>             </tr>             <tr>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff;">Petoyan</td>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff; font-weight: 600;">                     Anggara Kasih Tambir                 </td>             </tr>         </table>         <div style="text-align: center; margin-top: 10px;">             <a href='https://maps.google.com/?q=-8.4611061,115.0942181' target="_blank"              style="display: inline-block; padding: 8px 12px; background: #007BFF; color: white;              border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">                 📍 Google Maps             </a>         </div>     </div>     </div>`)[0];
+                popup_e07702d8883fb296ec4613e5ce2d8528.setContent(html_de9d9eaf30cdf5fac167a78d21eeacff);
+            
+        
+
+        marker_bf201ac2373da3d1030748f9ad6af873.bindPopup(popup_e07702d8883fb296ec4613e5ce2d8528)
+        ;
+
+        
+    
+    
+                marker_bf201ac2373da3d1030748f9ad6af873.setIcon(icon_9e90d1e0e5913f94ab0392c30096d467);
+            
+    
+            var marker_a595d360bae2b35fc0ad1c1f6416f85a = L.marker(
+                [-8.4802637, 115.1001854],
+                {
+}
+            ).addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var icon_3599bbc108cfe17b30803838d8ad7f4b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_70cebb14018d6d6146b3629f42e42682 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8b414a9419e2f6243e9d135a645c5e25 = $(`<div id="html_8b414a9419e2f6243e9d135a645c5e25" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; line-height: 1.4; padding: 10px; width: 350px; background: #ffffff;                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; text-align: center;">         <img src="https://th.bing.com/th/id/OIP.o15P0ev9BFKViKd06hNiRgHaHO?rs=1&pid=ImgDetMain" alt="Logo Pura" style="width: 80px; height: auto; margin-bottom: 10px;">         <h3 style="color: #007BFF; font-size: 18px; margin-bottom: 8px; text-transform: uppercase;">             Pura Majapahit Desa Adat Telaga Tunjung         </h3>         <table style="width: 100%; border-collapse: collapse; font-size: 14px; background: #f9f9f9; border-radius: 6px;">             <tr style="background: #007BFF; color: white;">                 <th style="text-align: left; padding: 6px; width: 40%;">Detail</th>                 <th style="text-align: left; padding: 6px;">Informasi</th>             </tr>             <tr>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff;">Petoyan</td>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff; font-weight: 600;">                     Buda Cemeng Langkir                 </td>             </tr>         </table>         <div style="text-align: center; margin-top: 10px;">             <a href='https://maps.google.com/?q=-8.4802637,115.1001854' target="_blank"              style="display: inline-block; padding: 8px 12px; background: #007BFF; color: white;              border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">                 📍 Google Maps             </a>         </div>     </div>     </div>`)[0];
+                popup_70cebb14018d6d6146b3629f42e42682.setContent(html_8b414a9419e2f6243e9d135a645c5e25);
+            
+        
+
+        marker_a595d360bae2b35fc0ad1c1f6416f85a.bindPopup(popup_70cebb14018d6d6146b3629f42e42682)
+        ;
+
+        
+    
+    
+                marker_a595d360bae2b35fc0ad1c1f6416f85a.setIcon(icon_3599bbc108cfe17b30803838d8ad7f4b);
+            
+    
+            var marker_51a0d68572f913762ff0a64af14853ce = L.marker(
+                [-8.4775408, 115.097527],
+                {
+}
+            ).addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var icon_d8b7e752d293dcfc0e073ea020688095 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30fbfdfbdab0291217652205a1d1f89d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8be0007a4352b887ccadf414a4fd1493 = $(`<div id="html_8be0007a4352b887ccadf414a4fd1493" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; line-height: 1.4; padding: 10px; width: 350px; background: #ffffff;                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; text-align: center;">         <img src="https://th.bing.com/th/id/OIP.o15P0ev9BFKViKd06hNiRgHaHO?rs=1&pid=ImgDetMain" alt="Logo Pura" style="width: 80px; height: auto; margin-bottom: 10px;">         <h3 style="color: #007BFF; font-size: 18px; margin-bottom: 8px; text-transform: uppercase;">             Pura Mrajapati lan Setra Desa Adat Telaga Tunjung         </h3>         <table style="width: 100%; border-collapse: collapse; font-size: 14px; background: #f9f9f9; border-radius: 6px;">             <tr style="background: #007BFF; color: white;">                 <th style="text-align: left; padding: 6px; width: 40%;">Detail</th>                 <th style="text-align: left; padding: 6px;">Informasi</th>             </tr>             <tr>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff;">Petoyan</td>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff; font-weight: 600;">                     Kuningan                 </td>             </tr>         </table>         <div style="text-align: center; margin-top: 10px;">             <a href='https://maps.google.com/?q=-8.4775408,115.097527' target="_blank"              style="display: inline-block; padding: 8px 12px; background: #007BFF; color: white;              border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">                 📍 Google Maps             </a>         </div>     </div>     </div>`)[0];
+                popup_30fbfdfbdab0291217652205a1d1f89d.setContent(html_8be0007a4352b887ccadf414a4fd1493);
+            
+        
+
+        marker_51a0d68572f913762ff0a64af14853ce.bindPopup(popup_30fbfdfbdab0291217652205a1d1f89d)
+        ;
+
+        
+    
+    
+                marker_51a0d68572f913762ff0a64af14853ce.setIcon(icon_d8b7e752d293dcfc0e073ea020688095);
+            
+    
+            var marker_941ba86b46ec31143b4ae345ef7cdb44 = L.marker(
+                [-8.4805738, 115.1000409],
+                {
+}
+            ).addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var icon_4f506527287dd98cd417c3252f799a1f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a7f3c8fa8c499dd64c5a2fa03a46244 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eb1606e75a5327f3d8ad413395a75aa3 = $(`<div id="html_eb1606e75a5327f3d8ad413395a75aa3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; line-height: 1.4; padding: 10px; width: 350px; background: #ffffff;                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; text-align: center;">         <img src="https://th.bing.com/th/id/OIP.o15P0ev9BFKViKd06hNiRgHaHO?rs=1&pid=ImgDetMain" alt="Logo Pura" style="width: 80px; height: auto; margin-bottom: 10px;">         <h3 style="color: #007BFF; font-size: 18px; margin-bottom: 8px; text-transform: uppercase;">             Balai Banjar & Sekretariat Desa Adat Telaga Tunjung         </h3>         <table style="width: 100%; border-collapse: collapse; font-size: 14px; background: #f9f9f9; border-radius: 6px;">             <tr style="background: #007BFF; color: white;">                 <th style="text-align: left; padding: 6px; width: 40%;">Detail</th>                 <th style="text-align: left; padding: 6px;">Informasi</th>             </tr>             <tr>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff;">Petoyan</td>                 <td style="padding: 6px; border-bottom: 1px solid #ddd; background: #ffffff; font-weight: 600;">                     -                 </td>             </tr>         </table>         <div style="text-align: center; margin-top: 10px;">             <a href='https://maps.google.com/?q=-8.4805738,115.1000409' target="_blank"              style="display: inline-block; padding: 8px 12px; background: #007BFF; color: white;              border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">                 📍 Google Maps             </a>         </div>     </div>     </div>`)[0];
+                popup_0a7f3c8fa8c499dd64c5a2fa03a46244.setContent(html_eb1606e75a5327f3d8ad413395a75aa3);
+            
+        
+
+        marker_941ba86b46ec31143b4ae345ef7cdb44.bindPopup(popup_0a7f3c8fa8c499dd64c5a2fa03a46244)
+        ;
+
+        
+    
+    
+                marker_941ba86b46ec31143b4ae345ef7cdb44.setIcon(icon_4f506527287dd98cd417c3252f799a1f);
+            
+    
+        function geo_json_9255cfea22985730bdebafe3c8ee5c00_styler(feature) {
+            switch(feature.properties.name) {
+                default:
+                    return {"color": "red", "dashArray": "5, 5", "fillOpacity": 0, "weight": 3};
+            }
+        }
+
+        function geo_json_9255cfea22985730bdebafe3c8ee5c00_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_9255cfea22985730bdebafe3c8ee5c00 = L.geoJson(null, {
+                onEachFeature: geo_json_9255cfea22985730bdebafe3c8ee5c00_onEachFeature,
+            
+                style: geo_json_9255cfea22985730bdebafe3c8ee5c00_styler,
+            ...{
+}
+        });
+
+        function geo_json_9255cfea22985730bdebafe3c8ee5c00_add (data) {
+            geo_json_9255cfea22985730bdebafe3c8ee5c00
+                .addData(data);
+        }
+            geo_json_9255cfea22985730bdebafe3c8ee5c00_add({"features": [{"geometry": {"coordinates": [[[115.0979934, -8.4827995], [115.1038332, -8.4778608], [115.0959398, -8.4770365], [115.0979934, -8.4827995]]], "type": "Polygon"}, "properties": {"name": "Desa Adat Telaga Tunjung"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_9255cfea22985730bdebafe3c8ee5c00.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["name"];
+    let aliases = ["name"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_9255cfea22985730bdebafe3c8ee5c00.addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+        function geo_json_636013ecdaabbf56aa99d2570e7892fb_styler(feature) {
+            switch(feature.properties.name) {
+                default:
+                    return {"color": "blue", "dashArray": "3, 3", "fillOpacity": 0, "weight": 3};
+            }
+        }
+
+        function geo_json_636013ecdaabbf56aa99d2570e7892fb_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_636013ecdaabbf56aa99d2570e7892fb = L.geoJson(null, {
+                onEachFeature: geo_json_636013ecdaabbf56aa99d2570e7892fb_onEachFeature,
+            
+                style: geo_json_636013ecdaabbf56aa99d2570e7892fb_styler,
+            ...{
+}
+        });
+
+        function geo_json_636013ecdaabbf56aa99d2570e7892fb_add (data) {
+            geo_json_636013ecdaabbf56aa99d2570e7892fb
+                .addData(data);
+        }
+            geo_json_636013ecdaabbf56aa99d2570e7892fb_add({"features": [{"geometry": {"coordinates": [[[115.0948, -8.474994], [115.094608, -8.474912], [115.094755, -8.474602], [115.094867, -8.474652], [115.094803, -8.47484], [115.094898, -8.474919], [115.0948, -8.474994]]], "type": "Polygon"}, "properties": {"name": "Pura Dalem"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_636013ecdaabbf56aa99d2570e7892fb.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["name"];
+    let aliases = ["name"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_636013ecdaabbf56aa99d2570e7892fb.addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+        
+    
+            var layer_control_92fee5acca66a4fdede1c41bf67a8243_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_f83c6921fc014af2945ab30cc2cb7a04,
+                    "CartoDB Positron" : tile_layer_f5b7d70d5c56affe039081e1d9b2f3e3,
+                    "CartoDB Dark Matter" : tile_layer_2429597b5ab3b6979266bc90fcf112e7,
+                    "Esri Satellite" : tile_layer_1f5fc61296f8353cd3b5134eea45fae7,
+                },
+                overlays :  {
+                    "Batas Wilayah Desa" : geo_json_9255cfea22985730bdebafe3c8ee5c00,
+                    "Batas Pura Dalem" : geo_json_636013ecdaabbf56aa99d2570e7892fb,
+                },
+            };
+            let layer_control_92fee5acca66a4fdede1c41bf67a8243 = L.control.layers(
+                layer_control_92fee5acca66a4fdede1c41bf67a8243_layers.base_layers,
+                layer_control_92fee5acca66a4fdede1c41bf67a8243_layers.overlays,
+                {
+  "position": "bottomleft",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_cb0b43b72be17b516bd240099f0b96a4);
+
+        
+    
+            map_cb0b43b72be17b516bd240099f0b96a4.fitBounds(
+                [[-8.4827995, 115.0942181], [-8.4611061, 115.1038332]],
+                {}
+            );
+        
+</script>
+</html>
